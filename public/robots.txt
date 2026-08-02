@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://dhirendrajha.tech/sitemap.xml
