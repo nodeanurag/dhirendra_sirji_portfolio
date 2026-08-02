@@ -46,7 +46,7 @@ export default function Hero() {
           initial={{ opacity: 0, y: 15 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: "easeOut" }}
-          className="flex items-center gap-5"
+          className="flex flex-col items-center text-center sm:flex-row sm:items-center sm:text-left gap-5"
         >
           <div className="grid size-20 shrink-0 place-items-center overflow-hidden rounded-xl border border-[var(--line)] bg-[var(--chip)]">
             <img src={basics.avatar} alt={basics.name} className="h-full w-full object-cover" />
@@ -69,7 +69,7 @@ export default function Hero() {
                 </motion.p>
               </AnimatePresence>
             </div>
-            <p className="mt-1 flex items-center gap-1 font-mono text-[11px] text-[var(--soft)]">
+            <p className="mt-1 flex items-center justify-center sm:justify-start gap-1 font-mono text-[11px] text-[var(--soft)]">
               <Icon icon="lucide:map-pin" className="size-3" /> {basics.location}
             </p>
           </div>

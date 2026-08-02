@@ -73,7 +73,7 @@ export default function Projects({ isSearchable = false }) {
         {/* Search Bar Dashboard (only for direct /projects route) */}
         {isSearchable && (
           <div className="mb-6 flex flex-col gap-4 sm:flex-row sm:items-center sm:justify-between border-b border-[var(--line)] pb-5">
-            <div className="relative flex-1 max-w-xs">
+            <div className="relative w-full sm:max-w-xs">
               <Icon icon="lucide:search" className="absolute left-3 top-1/2 size-4 -translate-y-1/2 text-[var(--soft)]" />
               <input
                 type="text"

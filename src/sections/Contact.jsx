@@ -1,6 +1,7 @@
 import React from "react";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { Shell, SectionHeader } from "../components/Layout";
+import { cn } from "../utils/cn";
 import { basics } from "../data/onyxData";
 
 export default function Contact() {
@@ -17,14 +18,20 @@ export default function Contact() {
     <div id="contact">
       <SectionHeader title="Contact" />
       <Shell>
-        <div className="flex flex-wrap">
-          {contactLinks.map((l) => (
+        <div className="grid grid-cols-2 sm:grid-cols-5 border-b border-[var(--line)] sm:border-b-0">
+          {contactLinks.map((l, idx) => (
             <a
               key={l.label}
               href={l.href}
               target={l.href.startsWith("mailto:") ? undefined : "_blank"}
               rel="noopener noreferrer"
-              className="group flex min-w-[50%] flex-1 items-center justify-center gap-2.5 border-b border-r border-[var(--line)] px-4 py-4 text-[13px] font-medium transition-colors duration-200 last:border-r-0 hover:bg-[var(--hover)] sm:min-w-0 sm:border-b-0"
+              className={cn(
+                "group flex items-center justify-center gap-2.5 border-b border-r border-[var(--line)] px-4 py-4 text-[13px] font-medium transition-colors duration-200 hover:bg-[var(--hover)]",
+                idx % 2 === 1 && "border-r-0 sm:border-r",
+                idx >= 4 && "border-b-0",
+                "sm:border-b-0 sm:last:border-r-0",
+                idx === 4 && "col-span-2 border-r-0 sm:col-span-1 sm:border-r"
+              )}
             >
               <span className="grid size-8 place-items-center rounded-lg border border-[var(--line)] bg-[var(--chip)] text-[var(--muted)] transition-colors group-hover:text-[var(--fg)]">
                 <Icon icon={l.icon} className={l.icon === "simple-icons:x" ? "size-3.5" : "size-4"} />
