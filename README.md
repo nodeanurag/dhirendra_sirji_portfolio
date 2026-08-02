@@ -1,133 +1,119 @@
-# 🖥️ Dhirendra Jha — Personal Portfolio
+# Dhirendra Jha - Portfolio Engineering and Architecture
 
-Welcome to the repository of **Dhirendra Jha**, a Senior Software Engineer specializing in Distributed Backend Systems, High-Throughput Automation Platforms, and Offline-First Architectures. 
-
-This portfolio is designed to be minimal, lighting-fast, and interactive, utilizing modern React design patterns, Tailwind CSS styling, and fluid motion-based micro-interactions.
+Technical documentation for Dhirendra Jha's professional portfolio application. The project is implemented as an optimized, responsive React Single Page Application (SPA) powered by Vite, Tailwind CSS, and Framer Motion.
 
 ---
 
-## 🚀 Key Features
+## Architectural Overview
 
-* **⚡ Clean & Modular Architecture:** The codebase has been fully refactored into isolated components, layout systems, custom hooks, and sections.
-* **🎨 Premium Aesthetic & Transitions:** Styled with a curated monochrome HSL palette, dark/light modes, custom **Amiamie** premium typography, and buttery-smooth `250ms` transitions.
-* **✨ Framer Motion Animations:**
-  * **Typewriter Loop:** Smoothly cycles between headlines ("Senior Software Engineer", "Distributed Systems Builder", "Automation Specialist", "Offline-First Architect").
-  * **Interactive Badges:** Spring-scale physics when filtering tech stacks.
-  * **Details Accordion:** Architectural and engineering breakdowns expand with custom height animation bounds.
-  * **Milestone Viewports:** Education and experience timelines fade and slide up dynamically as you scroll.
-* **🔍 Search & Filter Dashboard:** Dedicated projects explorer `/projects` featuring a live-search text box and interactive categorizer tabs (All / Official / Personal) with count badges.
-* **🕰️ IST Live Ticking Clock:** A real-time digital clock widget displaying Dhirendra's local timezone (Mumbai/Bangalore, India).
-* **📊 GitHub Activity Board:** Asynchronously displays public contribution statistics for the last 365 days (via Github Contributions API) with a deterministic fallback vector.
-* **📈 Visitor Telemetry:** Seamlessly integrated with `@vercel/analytics` to monitor visits and traffic statistics.
+The codebase is structured according to modular frontend design principles, separating structural components, data configurations, business logic (custom hooks), and presentation layers (sections).
 
----
-
-## 🛠️ Tech Stack & Dependencies
-
-* **Core Framework:** React 19 + Vite 6
-* **Router:** React Router DOM v7 (supports deep routes for `/projects` and `/experience`)
-* **Styling:** Tailwind CSS v4 + Vanilla CSS custom variables (`--bg`, `--fg`, `--card`, etc.)
-* **Animations:** Framer Motion v12
-* **Icons:** Iconify via `@iconify/react` (for official brand SVGs like Python, Django, Docker, Go, etc.)
-* **Analytics:** `@vercel/analytics`
-
----
-
-## 📂 Directory Structure
+### Directory Structure
 
 ```text
 ├── public/
-│   ├── fonts/amiamie/      # Amiamie regular, italic, bold, ttf & otf fonts
+│   ├── fonts/amiamie/      # Amiamie typography files (Regular, Italic, Light, Black)
 │   ├── images/
-│   │   ├── cover.jpg       # Steve Jobs at desk header cover image
-│   │   └── profile.jpg     # Developer Sherlock avatar image
-│   ├── CV_Dhirendra.pdf    # Senior Developer Resume
-│   ├── d.svg               # Site Favicon icon
-│   ├── sitemap.xml         # SEO search index file
-│   └── robots.txt          # SEO crawler rules
+│   │   ├── cover.jpg       # Background banner cover image
+│   │   └── profile.jpg     # Developer profile avatar image
+│   ├── CV_Dhirendra.pdf    # Senior Developer resume (PDF format)
+│   ├── d.svg               # Site Favicon asset
+│   ├── sitemap.xml         # SEO search index parameters
+│   └── robots.txt          # Web crawler directory access rules
 ├── src/
 │   ├── components/
-│   │   └── Layout.jsx      # Reusable Shell, SectionHeader, and GapBand elements
+│   │   └── Layout.jsx      # Shared structural layout components (Shell, SectionHeader, GapBand)
 │   ├── data/
-│   │   └── onyxData.js     # Single source of truth containing copy, milestones, and data
+│   │   └── onyxData.js     # Centralized configuration file (profile, projects, experience history)
 │   ├── hooks/
-│   │   ├── useGithubHeatmap.js # Async Github Contributions board data fetch hook
-│   │   └── useLocalTime.js # Indian Standard Time ticking clock state hook
+│   │   ├── useGithubHeatmap.js # Handles asynchronous Git contributions data fetch
+│   │   └── useLocalTime.js # State-driven clock hook synced to Asia/Kolkata local time
 │   ├── sections/
-│   │   ├── About.jsx       # About paragraph animations
-│   │   ├── Contact.jsx     # Contact links grid & resume download actions
-│   │   ├── Experience.jsx  # Experience & Education timelines
-│   │   ├── GithubActivity.jsx  # Year commit contribution grid
-│   │   ├── Hero.jsx        # Banner, Avatar, Name, Location & Typewriter loop
-│   │   ├── ProjectCard.jsx # Accordion card containing code repositories
-│   │   ├── Projects.jsx    # Project list view & textual search explorer
-│   │   └── TechStack.jsx   # Filterable skill badges with brand SVG logos
+│   │   ├── About.jsx       # About summary section viewport layout
+│   │   ├── Contact.jsx     # Contact links grid and resume actions
+│   │   ├── Experience.jsx  # Career history and education timelines
+│   │   ├── GithubActivity.jsx  # Git contributions calendar grid
+│   │   ├── Hero.jsx        # Cover banner, profile image, and title loop animations
+│   │   ├── ProjectCard.jsx # Expandable project cards with engineering detail accordions
+│   │   ├── Projects.jsx    # Projects search and dashboard filtering layout
+│   │   └── TechStack.jsx   # Tabbed technical skillset view with brand SVG graphics
 │   ├── utils/
-│   │   └── cn.js           # Classnames utility helper to prevent Fast Refresh lints
-│   ├── App.jsx             # Vercel analytics setup & React Router routing mapping
-│   ├── OnyxPortfolio.jsx   # Main Portfolio Shell containing header navigation and global themes
-│   ├── index.css           # Custom font faces, global color variables, and transition styles
-│   └── main.jsx            # Application entrypoint
-├── index.html              # Core HTML file containing SEO tags and metadata
+│   │   └── cn.js           # Lightweight classnames merger helper
+│   ├── App.jsx             # Vercel Analytics integration and path routing configuration
+│   ├── OnyxPortfolio.jsx   # Core interface shell coordinating routes and dark/light themes
+│   ├── index.css           # Global typography definitions, Tailwind directives, and transition variables
+│   └── main.jsx            # Application mount entry point
+├── index.html              # Entry HTML document containing search indexing meta headers
 ├── vite.config.js          # Vite bundler parameters
-└── package.json            # Configuration and dependencies
+└── package.json            # Script definitions and dependency trees
 ```
 
 ---
 
-## 💻 Getting Started
+## Key Technical Implementations
 
-Follow these steps to run the portfolio on your local machine:
+### 1. State-Driven Title Loop
+The title loop in the Hero section displays rotation metrics between developer roles utilizing React lifecycle hooks (`useEffect`) and custom Framer Motion spring fades to prevent layout shifts.
 
-### 1. Prerequisites
-Ensure you have **Node.js** (v18 or higher) and **npm** installed.
+### 2. Client-Side Search and Project Filtering
+The projects dashboard (`/projects`) incorporates a real-time regex search index filtering project entries based on title, description, category, and technologies. Active project counters update in sync with selection tabs (All, Official, Personal).
 
-### 2. Clone the Repository
-```bash
-git clone https://github.com/dhirendraj-cmd/my-portfolio.git
-cd my-portfolio
-```
+### 3. Dynamic Theme Synchronization
+The theme context state reads and persists values to `localStorage`. Fallback settings dynamically respect the visitor's OS configuration through the `window.matchMedia("(prefers-color-scheme: dark)")` browser query. Color channels, backgrounds, and borders transition concurrently over a 250ms interval.
 
-### 3. Install Dependencies
-```bash
-npm install
-```
+### 4. Fully Responsive Layout Grid
+Responsive layouts are configured via mobile-first Flexbox and CSS Grid layers:
+* **Identity Header:** Stacks vertically on mobile viewports for optimal spacing and aligns horizontally on tablet/desktop displays.
+* **Contacts Interface:** Refactored into a custom grid structure (`grid-cols-2` scaling to `sm:grid-cols-5`) that implements responsive border rules to resolve duplicate borders and wrapping issues.
+* **Search dashboard:** Input parameters scale dynamically (`w-full sm:max-w-xs`) across different device breakpoints.
 
-### 4. Run Development Server
-```bash
-npm run dev
-```
-Open your browser and navigate to `http://localhost:5173` to see the site.
-
-### 5. Build for Production
-Create an optimized production bundle inside the `dist/` directory:
-```bash
-npm run build
-```
-
-### 6. Lint the Codebase
-Analyze and format codebase syntax rules:
-```bash
-npm run lint
-```
+### 5. Git Contribution Calendar
+The Git contribution module fetches yearly commit stats asynchronously from the GitHub API and renders them in a grid. A deterministic fallback matrix loads immediately if API request latency is encountered.
 
 ---
 
-## 📈 Deployment & Analytics
+## Technical Stack and Dependencies
 
-This portfolio is configured for deployment on **Vercel** with automatic analytics tracking:
-* Deploying can be done by pushing to GitHub and linking to a Vercel project, or by using the Vercel CLI:
-  ```bash
-  vercel --prod
-  ```
-* Ensure you enable **Vercel Analytics** in your project dashboard so that `@vercel/analytics` tracks real-time traffic statistics.
+* **Core Library:** React 19 + Vite 6
+* **Routing Module:** React Router DOM v7 (coordinating `/`, `/projects`, and `/experience` endpoints)
+* **Styling Engine:** Tailwind CSS v4 + custom HSL CSS variables
+* **Animation Library:** Framer Motion v12
+* **Icon Provider:** Iconify framework (loading brand SVGs matching logo specifications)
+* **Visitor Tracking:** Vercel Web Analytics
 
 ---
 
-## 📬 Contact & Links
+## Developer Guide
 
-* **Domain:** [https://dhirendrajha.tech](https://dhirendrajha.tech)
-* **GitHub:** [@dhirendraj-cmd](https://github.com/dhirendraj-cmd)
-* **LinkedIn:** [dhirendra-jha](https://www.linkedin.com/in/dhirendra-jha-384351174)
-* **Email:** djha5051@gmail.com
-* **Twitter/X:** [@Dhirend78495000](https://x.com/Dhirend78495000)
+Follow these steps to configure your local development environment:
+
+### Prerequisites
+* **Node.js** (v18.0.0 or higher)
+* **npm** (v9.0.0 or higher)
+
+### Setup Instructions
+1. Install project dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the local development server:
+   ```bash
+   npm run dev
+   ```
+3. Compile the application into an optimized production bundle:
+   ```bash
+   npm run build
+   ```
+4. Run ESLint code checks:
+   ```bash
+   npm run lint
+   ```
+
+---
+
+## Deployment Parameters
+
+The application is deployed on Vercel. Ensure Web Analytics tracking is enabled in your project's dashboard to gather real-time performance telemetry. For manual CLI deployments, run:
+```bash
+vercel --prod
+```
