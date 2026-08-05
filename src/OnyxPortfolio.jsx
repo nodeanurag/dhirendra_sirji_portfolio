@@ -13,7 +13,6 @@ import Contact from "./sections/Contact";
 import Projects from "./sections/Projects";
 import Experience from "./sections/Experience";
 import TechStack from "./sections/TechStack";
-import GithubActivity from "./sections/GithubActivity";
 
 // Hooks & Data
 import { useLocalTime } from "./hooks/useLocalTime";
@@ -121,7 +120,6 @@ const OnyxPortfolio = () => {
               <Projects isSearchable={false} />
               <Experience />
               <TechStack groups={skillGroups} />
-              <GithubActivity />
             </>
           }
         />
